@@ -1,0 +1,30 @@
+# OS system files
+.DS_Store
+Thumbs.db
+
+# pgAdmin local config – ne verzionirati
+pgadmin4.db
+pgadmin4.log
+.pgadmin/
+.pgpass
+.pg_service.conf
+
+# PostgreSQL dumpovi i backupi
+*.backup
+*.bak
+*.sql.dump
+*.pgsql
+*.dmp
+
+# Temporary files
+*.tmp
+*.temp
+
+# Mockaroo data exports (raw CSV/JSON)
+mockaroo/*.csv
+mockaroo/*.json
+mockaroo/*.xlsx
+
+# Editors
+.vscode/
+.idea/
