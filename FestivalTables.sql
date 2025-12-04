@@ -33,6 +33,7 @@ CREATE TYPE StaffRole AS ENUM (
     'volonter'
 );
 CREATE TYPE MembershipCardStatus AS ENUM('aktivan', 'istekao');
+CREATE TYPE WorkshopStatus AS ENUM ('prijavljen', 'otkazan', 'prisustvovao');
 
 
 -- CREATE TABLES 
@@ -127,7 +128,7 @@ CREATE TABLE MembershipCard(
 	Status MembershipCardStatus NOT NULL
 );
 
---ADD Foreign Keys
+--ADD Foreign Keys, alterations
 
 ALTER TABLE Performances
 ADD COLUMN StageID INT NOT NULL REFERENCES Stages(StageID);
@@ -141,10 +142,42 @@ ADD COLUMN PerformerID INT NOT NULL REFERENCES Performers(PerformerID);
 ALTER TABLE Performances
 ADD CONSTRAINT unique_stage_time UNIQUE (StageID, StartTime, EndTime);
 
+ALTER TABLE MembershipCard
+ADD COLUMN VisitorID INT UNIQUE REFERENCES Visitors(VisitorID);
+
+ALTER TABLE Workshops
+ADD COLUMN MentorID INT REFERENCES Mentors(MentorID);
+
+ALTER TABLE Staff
+ADD COLUMN FestivalID INT REFERENCES Festivals(FestivalID);
+
 --M:N 
 
 CREATE TABLE FestivalPerformers(
     FestivalID INT NOT NULL REFERENCES Festivals(FestivalID),
     PerformerID INT NOT NULL REFERENCES Performers(PerformerID),
     PRIMARY KEY (FestivalID, PerformerID)
+);
+
+CREATE TABLE Purchases(
+    PurchaseID SERIAL PRIMARY KEY,
+    VisitorID INT NOT NULL REFERENCES Visitors(VisitorID),
+    FestivalID INT NOT NULL REFERENCES Festivals(FestivalID),
+    OrderDate TIMESTAMP NOT NULL CHECK(OrderDate <= NOW()),
+    TotalPrice FLOAT NOT NULL 
+);
+
+CREATE TABLE PurchaseItems(
+    PurchaseItemID SERIAL PRIMARY KEY,
+    PurchaseID INT NOT NULL REFERENCES Purchases(PurchaseID),
+    TicketID INT NOT NULL REFERENCES Tickets(TicketID),
+    Quantity INT NOT NULL CHECK (Quantity BETWEEN 1 AND 50)
+);
+
+CREATE TABLE VisitorWorkshops (
+    VisitorID INT NOT NULL REFERENCES Visitors(VisitorID),
+    WorkshopID INT NOT NULL REFERENCES Workshops(WorkshopID),
+    RegistrationTime TIMESTAMP NOT NULL CHECK(RegistrationTime <= NOW()),
+    Status WorkshopStatus NOT NULL,
+    PRIMARY KEY (VisitorID, WorkshopID)
 );
