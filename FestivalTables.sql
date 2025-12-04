@@ -26,8 +26,13 @@ CREATE TYPE TicketType AS ENUM ( 'jednodnevna',
 );
 
 CREATE TYPE TicketValidity AS ENUM ('dan', 'cijeli_festival');
-
-
+CREATE TYPE StaffRole AS ENUM (
+    'organizator',
+    'tehnicar',
+    'zastitar',
+    'volonter'
+);
+CREATE TYPE MembershipCardStatus AS ENUM('aktivan', 'istekao');
 -- CREATE TABLES 
 
 CREATE TABLE Festivals ( 
@@ -82,7 +87,7 @@ CREATE TABLE Tickets (
 	Validity TicketValidity NOT NULL 
 );
 
-CREATE TABLE Workshop(
+CREATE TABLE Workshops(
 	WorkshopID SERIAL PRIMARY KEY, 
 	Name VARCHAR(30) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
 	Difficulty WorkshopDifficulty NOT NULL,
@@ -91,3 +96,31 @@ CREATE TABLE Workshop(
 	PriorKnowledge BOOLEAN default FALSE
 );
 
+CREATE TABLE Mentors(
+	MentorID SERIAL PRIMARY KEY, 
+	Name VARCHAR(30) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	LastName VARCHAR(30) NOT NULL CHECK (LastName ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	Birthday DATE NOT NULL ,
+	Expertise VARCHAR(40) NOT NULL CHECK (Expertise ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'),
+	ExperienceYears INT NOT NULL  CHECK(ExperienceYears>2),
+	CHECK (EXTRACT(YEAR FROM AGE(Birthday)) >= 18),
+    CHECK (ExperienceYears <= EXTRACT(YEAR FROM AGE(Birthday)) - 16)	
+);
+
+CREATE TABLE Staff(
+	StaffID SERIAL PRIMARY KEY, 
+	Name VARCHAR(30) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	LastName VARCHAR(30) NOT NULL CHECK (LastName ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	Birthday DATE NOT NULL ,
+	Role StaffRole NOT NULL,
+    Contact VARCHAR(50) NOT NULL,
+	HasSafetyTraining BOOLEAN DEFAULT FALSE,
+	CHECK (EXTRACT(YEAR FROM AGE(Birthday)) >= 18),
+	CHECK ((Role != 'zastitar') OR (EXTRACT(YEAR FROM AGE(Birthday)) >= 21))
+);
+
+CREATE TABLE MembershipCard(
+	MembershipCardID SERIAL PRIMARY KEY, 
+	ActivationDate DATE NOT NULL CHECK((EXTRACT(YEAR FROM ActivationDate)) BETWEEN 2020 AND 2025),
+	Status MembershipCardStatus NOT NULL
+);
