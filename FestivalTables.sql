@@ -33,6 +33,8 @@ CREATE TYPE StaffRole AS ENUM (
     'volonter'
 );
 CREATE TYPE MembershipCardStatus AS ENUM('aktivan', 'istekao');
+
+
 -- CREATE TABLES 
 
 CREATE TABLE Festivals ( 
@@ -123,4 +125,26 @@ CREATE TABLE MembershipCard(
 	MembershipCardID SERIAL PRIMARY KEY, 
 	ActivationDate DATE NOT NULL CHECK((EXTRACT(YEAR FROM ActivationDate)) BETWEEN 2020 AND 2025),
 	Status MembershipCardStatus NOT NULL
+);
+
+--ADD Foreign Keys
+
+ALTER TABLE Performances
+ADD COLUMN StageID INT NOT NULL REFERENCES Stages(StageID);
+
+ALTER TABLE Performances
+ADD COLUMN FestivalID INT NOT NULL REFERENCES Festivals(FestivalID);
+
+ALTER TABLE Performances
+ADD COLUMN PerformerID INT NOT NULL REFERENCES Performers(PerformerID);
+
+ALTER TABLE Performances
+ADD CONSTRAINT unique_stage_time UNIQUE (StageID, StartTime, EndTime);
+
+--M:N 
+
+CREATE TABLE FestivalPerformers(
+    FestivalID INT NOT NULL REFERENCES Festivals(FestivalID),
+    PerformerID INT NOT NULL REFERENCES Performers(PerformerID),
+    PRIMARY KEY (FestivalID, PerformerID)
 );
