@@ -40,8 +40,8 @@ CREATE TYPE WorkshopStatus AS ENUM ('prijavljen', 'otkazan', 'prisustvovao');
 
 CREATE TABLE Festivals ( 
 	FestivalID SERIAL PRIMARY KEY, 
-	Name VARCHAR(50) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
-	Town VARCHAR(25) NOT NULL CHECK (Town ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	Name VARCHAR(200) NOT NULL, 
+	Town VARCHAR(250) NOT NULL , 
 	Capacity INT CHECK(Capacity BETWEEN 1000 AND 1000000), 
 	StartDate TIMESTAMP CHECK(EXTRACT(YEAR FROM StartDate ) BETWEEN 1900 AND 2050), 
 	EndDate TIMESTAMP CHECK(EndDate>StartDate), 
@@ -50,7 +50,7 @@ CREATE TABLE Festivals (
 	
 CREATE TABLE Stages (
 	StageID SERIAL PRIMARY KEY, 
-	Name VARCHAR(30) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	Name VARCHAR(200) NOT NULL , 
 	Location StageLocation NOT NULL, 
 	VisitorCapacity INT CHECK(VisitorCapacity BETWEEN 10 AND 500000 ), 
 	HasCover BOOLEAN default FALSE 
@@ -58,9 +58,9 @@ CREATE TABLE Stages (
 
 CREATE TABLE Performers ( 
 	PerformerID SERIAL PRIMARY KEY, 
-	Name VARCHAR(30) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
-	Country VARCHAR(30) NOT NULL CHECK (Country ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
-	Genre VARCHAR(30) NOT NULL , 
+	Name VARCHAR(300) NOT NULL , 
+	Country VARCHAR(300) NOT NULL ,
+	Genre VARCHAR(300) NOT NULL , 
 	NumberOfMembers INT CHECK(NumberOfMembers BETWEEN 1 AND 150), 
 	IsActive BOOLEAN default TRUE 
 ); 
@@ -74,25 +74,25 @@ CREATE TABLE Performances (
 
 CREATE TABLE Visitors ( 
 	VisitorID SERIAL PRIMARY KEY, 
-	Name VARCHAR(30) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
-	LastName VARCHAR(30) NOT NULL CHECK (LastName ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	Name VARCHAR(300) NOT NULL, 
+	LastName VARCHAR(300) NOT NULL, 
 	Birthday DATE CHECK(EXTRACT(YEAR FROM Birthday ) BETWEEN 1930 AND 2025), 
-	City VARCHAR(50) NOT NULL CHECK (City ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	City VARCHAR(300) NOT NULL, 
 	Email VARCHAR(100) NOT NULL UNIQUE CHECK (Email ~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'), 
-	Country VARCHAR(30) NOT NULL CHECK (Country ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$') 
+	Country VARCHAR(300) NOT NULL 
 ); 
 
 CREATE TABLE Tickets ( 
 	TicketID SERIAL PRIMARY KEY, 
 	Type TicketType NOT NULL, 
 	Price FLOAT NOT NULL CHECK(Price BETWEEN 0 AND 500000), 
-	Description VARCHAR(100)NOT NULL CHECK (Description ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	Description VARCHAR(100)NOT NULL, 
 	Validity TicketValidity NOT NULL 
 );
 
 CREATE TABLE Workshops(
 	WorkshopID SERIAL PRIMARY KEY, 
-	Name VARCHAR(30) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	Name VARCHAR(300) NOT NULL, 
 	Difficulty WorkshopDifficulty NOT NULL,
 	Capacity INT NOT NULL CHECK(Capacity BETWEEN 0 AND 500000),
 	DurationHours DECIMAL(4,1) CHECK (DurationHours BETWEEN 0.5 AND 24),
@@ -101,22 +101,22 @@ CREATE TABLE Workshops(
 
 CREATE TABLE Mentors(
 	MentorID SERIAL PRIMARY KEY, 
-	Name VARCHAR(30) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
-	LastName VARCHAR(30) NOT NULL CHECK (LastName ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	Name VARCHAR(300) NOT NULL, 
+	LastName VARCHAR(300) NOT NULL, 
 	Birthday DATE NOT NULL ,
-	Expertise VARCHAR(40) NOT NULL CHECK (Expertise ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'),
+	Expertise VARCHAR(400) NOT NULL,
 	ExperienceYears INT NOT NULL  CHECK(ExperienceYears>2),
 	CHECK (EXTRACT(YEAR FROM AGE(Birthday)) >= 18),
-    CHECK (ExperienceYears <= EXTRACT(YEAR FROM AGE(Birthday)) - 16)	
+    CHECK (ExperienceYears <= EXTRACT(YEAR FROM AGE(Birthday)) - 10)	
 );
 
 CREATE TABLE Staff(
 	StaffID SERIAL PRIMARY KEY, 
-	Name VARCHAR(30) NOT NULL CHECK (Name ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
-	LastName VARCHAR(30) NOT NULL CHECK (LastName ~ '^[A-Za-z0-9ČĆĐŠŽčćđšž ]+$'), 
+	Name VARCHAR(300) NOT NULL, 
+	LastName VARCHAR(300) NOT NULL, 
 	Birthday DATE NOT NULL ,
 	Role StaffRole NOT NULL,
-    Contact VARCHAR(50) NOT NULL,
+    Contact VARCHAR(500) NOT NULL,
 	HasSafetyTraining BOOLEAN DEFAULT FALSE,
 	CHECK (EXTRACT(YEAR FROM AGE(Birthday)) >= 18),
 	CHECK ((Role != 'zastitar') OR (EXTRACT(YEAR FROM AGE(Birthday)) >= 21))
