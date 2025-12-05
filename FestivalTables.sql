@@ -130,6 +130,9 @@ CREATE TABLE MembershipCard(
 
 --ADD Foreign Keys, alterations
 
+ALTER TABLE Stages
+ADD COLUMN FestivalID INT NOT NULL REFERENCES Festivals(FestivalID);
+
 ALTER TABLE Performances
 ADD COLUMN StageID INT NOT NULL REFERENCES Stages(StageID);
 
@@ -147,6 +150,12 @@ ADD COLUMN VisitorID INT UNIQUE REFERENCES Visitors(VisitorID);
 
 ALTER TABLE Workshops
 ADD COLUMN MentorID INT REFERENCES Mentors(MentorID);
+
+ALTER TABLE Workshops
+ADD COLUMN FestivalID INT NOT NULL REFERENCES Festivals(FestivalID);
+
+ALTER TABLE Tickets
+ADD COLUMN FestivalID INT NOT NULL REFERENCES Festivals(FestivalID);
 
 ALTER TABLE Staff
 ADD COLUMN FestivalID INT REFERENCES Festivals(FestivalID);
