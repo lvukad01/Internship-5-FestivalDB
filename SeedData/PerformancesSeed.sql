@@ -323,7 +323,7 @@ insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageI
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('4:45 PM', '6:11 PM', 320, 377, 932, 470);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('11:08 AM', '1:13 PM', 138, 347, 840, 833);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('1:08 PM', '2:32 PM', 266, 862, 258, 449);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('1:30 AM', '2:47 AM', 784, 495, 900, 592);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('1:30 AM', '2:47 AM', 33004, 495, 236, 592);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('2:34 PM', '4:24 PM', 115, 516, 448, 589);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('10:26 PM', '11:58 PM', 45, 856, 883, 188);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('4:20 AM', '5:52 AM', 960, 119, 496, 27);
@@ -364,7 +364,7 @@ insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageI
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('1:18 PM', '4:04 PM', 967, 177, 650, 552);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('4:52 AM', '7:15 AM', 84, 34, 340, 146);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('6:38 AM', '8:24 AM', 513, 3, 593, 299);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('6:15 PM', '8:44 PM', 293, 287, 196, 374);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('6:15 PM', '8:44 PM', 19476, 287, 546, 374);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('12:51 PM', '3:07 PM', 358, 4, 580, 249);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('11:04 AM', '1:53 PM', 886, 370, 316, 956);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:41 PM', '10:33 PM', 321, 134, 443, 914);
@@ -396,7 +396,7 @@ insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageI
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('9:10 PM', '12:09 AM', 232, 35, 77, 616);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('12:50 PM', '2:53 PM', 561, 79, 298, 63);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('9:30 PM', '11:40 PM', 335, 491, 4, 68);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('12:17 PM', '2:16 PM', 908, 602, 561, 605);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('12:17 PM', '2:16 PM', 23900, 602, 470, 605);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:58 AM', '10:57 AM', 109, 45, 454, 631);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('4:43 PM', '6:08 PM', 848, 121, 150, 449);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('7:46 AM', '10:30 AM', 548, 805, 476, 836);
@@ -452,7 +452,7 @@ insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageI
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('1:36 AM', '3:22 AM', 383, 725, 99, 766);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('9:08 PM', '11:06 PM', 613, 320, 37, 187);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('4:39 AM', '7:18 AM', 330, 107, 385, 264);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('2:55 PM', '5:28 PM', 312, 553, 572, 254);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('2:55 PM', '5:28 PM', 12000, 553, 3, 254);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('6:36 PM', '8:27 PM', 145, 406, 541, 392);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('5:28 PM', '6:33 PM', 107, 844, 830, 916);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('11:01 PM', '12:22 AM', 759, 265, 18, 292);
@@ -500,7 +500,7 @@ insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageI
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:25 AM', '10:31 AM', 148, 482, 349, 88);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('1:29 AM', '4:28 AM', 197, 176, 243, 954);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('11:57 PM', '1:42 AM', 338, 60, 780, 279);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:56 PM', '11:56 PM', 742, 262, 992, 926);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:56 PM', '11:56 PM', 21947, 262, 690, 926);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('1:57 PM', '3:27 PM', 751, 479, 488, 131);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('10:42 AM', '1:41 PM', 308, 806, 31, 390);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('12:09 AM', '1:28 AM', 761, 961, 23, 453);
@@ -565,7 +565,7 @@ insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageI
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('3:52 PM', '5:50 PM', 704, 57, 26, 262);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:53 PM', '10:55 PM', 665, 299, 447, 734);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('6:40 PM', '7:41 PM', 850, 917, 13, 971);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:00 PM', '9:44 PM', 149, 180, 757, 278);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:00 PM', '9:44 PM', 14569, 180, 56, 278);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('3:48 AM', '5:16 AM', 465, 204, 685, 753);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:52 AM', '10:47 AM', 607, 257, 637, 442);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('6:03 PM', '8:01 PM', 618, 85, 363, 588);
@@ -629,7 +629,7 @@ insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageI
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('10:53 PM', '12:01 AM', 243, 491, 455, 884);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('10:21 PM', '11:41 PM', 166, 305, 748, 553);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('9:54 AM', '12:48 PM', 652, 819, 176, 333);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('7:12 PM', '10:06 PM', 125, 562, 226, 297);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('7:12 PM', '10:06 PM', 24938, 562, 130, 297);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('11:13 AM', '12:22 PM', 265, 874, 2, 543);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('7:12 AM', '8:55 AM', 257, 599, 643, 963);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('11:06 AM', '12:30 PM', 434, 646, 938, 91);
@@ -667,7 +667,7 @@ insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageI
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('10:55 AM', '12:55 PM', 3, 978, 901, 872);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('12:14 AM', '1:21 AM', 883, 690, 989, 801);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('7:57 PM', '9:55 PM', 38, 234, 853, 990);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('3:44 PM', '6:37 PM', 489, 498, 574, 629);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('3:44 PM', '6:37 PM', 42335, 498, 693, 629);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('7:25 PM', '8:41 PM', 640, 765, 77, 52);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('11:14 PM', '12:34 AM', 304, 222, 892, 986);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('4:26 PM', '5:27 PM', 144, 660, 940, 384);
@@ -710,13 +710,13 @@ insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageI
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('7:40 AM', '8:45 AM', 132, 748, 242, 184);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('1:45 AM', '4:38 AM', 123, 821, 95, 775);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('3:12 PM', '4:33 PM', 953, 664, 611, 878);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('12:43 PM', '3:30 PM', 70, 628, 672, 632);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('12:43 PM', '3:30 PM', 11000, 628, 33, 632);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('6:05 PM', '7:57 PM', 573, 971, 178, 928);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('4:27 AM', '5:29 AM', 825, 861, 84, 835);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:47 AM', '9:52 AM', 997, 576, 943, 507);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('2:30 AM', '4:31 AM', 298, 312, 575, 33);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('2:25 PM', '4:34 PM', 504, 560, 896, 584);
-insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('3:17 AM', '4:39 AM', 183, 254, 934, 322);
+insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('3:17 AM', '4:39 AM', 12333, 254, 134, 322);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('4:21 PM', '5:45 PM', 30, 531, 620, 123);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('8:23 AM', '10:30 AM', 405, 240, 681, 760);
 insert into Performances (StartTime, EndTime, VisitorsNumber, FestivalID, StageID, PerformerID) values ('2:55 PM', '4:05 PM', 95, 791, 314, 975);

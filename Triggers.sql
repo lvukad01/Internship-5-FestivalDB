@@ -172,38 +172,6 @@ EXECUTE FUNCTION assign_membership_card();
 
 
 
-CREATE OR REPLACE FUNCTION check_workshop_registration()
-RETURNS TRIGGER AS $$
-DECLARE currentParticipants INT;
-DECLARE requiredKnowledge BOOLEAN;
-BEGIN
-    SELECT COUNT(*) INTO currentParticipants
-    FROM VisitorWorkshops
-    WHERE WorkshopID = NEW.WorkshopID;
-
-    SELECT PriorKnowledge INTO requiredKnowledge
-    FROM Workshops
-    WHERE WorkshopID = NEW.WorkshopID;
-
-    IF currentParticipants >= (SELECT Capacity FROM Workshops WHERE WorkshopID = NEW.WorkshopID) THEN
-        RAISE EXCEPTION 'Radionica ID-a (%) je popunjena. Maksimalni broj polaznika je %', 
-            WorkshopID, (SELECT Capacity FROM Workshops WHERE WorkshopID = NEW.WorkshopID);
-    END IF;
-
-    IF requiredKnowledge AND NEW.Status = 'prijavljen' THEN
-        IF NOT NEW.HasPriorKnowledge THEN
-            RAISE EXCEPTION 'Radionica zahtijeva prethodno znanje.';
-        END IF;
-    END IF;
-
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER trg_check_workshop_registration
-BEFORE INSERT OR UPDATE ON VisitorWorkshops
-FOR EACH ROW
-EXECUTE FUNCTION check_workshop_registration();
 
 
 
